@@ -82,37 +82,13 @@ public class Empregado {
 public void incrementarSalario(){
     
 }
-public class Supervisor extends Empregado{
-    String nome;
 
-        public Supervisor(String nome) {
-            this.nome = nome;
-        }
-
-        public String getNome() {
-            return nome;
-        }
-
-        public void setNome(String nome) {
-            this.nome = nome;
-        }
-
-        @Override
-        public String toString() {
-            return "Supervisor{" + "nome=" + nome + '}';
-        }
-       
-    
-}
 public void cambiarSupervisor(Supervisor supervisor){
     this.supervisor=supervisor;
 }
 
  
-    public static void main(String[] args) {
-     Empregado Emilio= new Empregado("Celso","Emilio_Ferreiro","Calle/Soubiñas/13","263792G",986326123,1200.03);
-     Emilio.imprimir();
-    }
+   
     
 }
 

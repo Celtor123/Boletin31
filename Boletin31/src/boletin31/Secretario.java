@@ -72,8 +72,6 @@ public class Secretario extends Empregado{
 // • Construtores (debe encher a información persoal e os datos principais)
 // • Imprimir (debe imprimir os seus datos persoais e o seu posto na empresa).
     
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
+    
 
   }
