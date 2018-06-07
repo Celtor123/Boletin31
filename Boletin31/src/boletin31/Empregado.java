@@ -4,10 +4,11 @@ package boletin31;
 import javax.swing.JOptionPane;
 
 public class Empregado {
-String nome, apelidos,direccion,DNI; 
+  String nome, apelidos,direccion,DNI; 
         int teléfono;
         double salario;
- int ano;
+        private Supervisor supervisor;
+    int ano;
     public Empregado() {
     }
 
@@ -76,17 +77,37 @@ String nome, apelidos,direccion,DNI;
         this.ano = ano;
     }
     public void imprimir(){
-        JOptionPane.showMessageDialog(null, "nome:"+nome+" apelidos:"+apelidos+" direccion:"+direccion+" DNI:"+DNI+" teléfono:"+teléfono+" salario:"+salario);
-    }
+       System.out.print("Empregado{" + "nome=" + nome + ", apelidos=" + apelidos + ", direccion=" + direccion + ", DNI=" + DNI + ", tel\u00e9fono=" + teléfono + ", salario=" + salario + ", supervisor=" + supervisor + ", ano=" + ano + '}');
+        }
 public void incrementarSalario(){
     
 }
 public class Supervisor extends Empregado{
     String nome;
-    Supervisor(){
-    nome=JOptionPane.showInputDialog("Poña o nome do supervisor");
-    }
+
+        public Supervisor(String nome) {
+            this.nome = nome;
+        }
+
+        public String getNome() {
+            return nome;
+        }
+
+        public void setNome(String nome) {
+            this.nome = nome;
+        }
+
+        @Override
+        public String toString() {
+            return "Supervisor{" + "nome=" + nome + '}';
+        }
+       
+    
 }
+public void cambiarSupervisor(Supervisor supervisor){
+    this.supervisor=supervisor;
+}
+
  
     public static void main(String[] args) {
      Empregado Emilio= new Empregado("Celso","Emilio_Ferreiro","Calle/Soubiñas/13","263792G",986326123,1200.03);
@@ -97,5 +118,5 @@ public class Supervisor extends Empregado{
 
 //• Construtores para definir correctamente un empregado, a partir do seu nome, apelidos, DNI, dirección, teléfono e salario. 
 //• Imprimir (amosa os datos )  
-//• Cambiar supervisor
+//• Cambiar supervisor*2
 // • Incrementar salario

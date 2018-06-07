@@ -4,22 +4,63 @@ package boletin31;
 import javax.swing.JOptionPane;
 
 public class Secretario extends Empregado{
-    int despacho,numfax,ano,salario;
-   
+    int numfax,ano;
+    double salario;
+   private Despacho despacho;
     public Secretario() {
     }
 
-    public Secretario(int despacho, int numfax, int salario) {
-        this.despacho = despacho;
+    public Secretario(int numfax, int ano, int salario, Despacho despacho) {
         this.numfax = numfax;
+        this.ano = ano;
+        this.salario = salario;
+        this.despacho = despacho;
+    }
+
+    public int getNumfax() {
+        return numfax;
+    }
+
+    public void setNumfax(int numfax) {
+        this.numfax = numfax;
+    }
+
+    public int getAno() {
+        return ano;
+    }
+
+    public void setAno(int ano) {
+        this.ano = ano;
+    }
+
+    public double getSalario() {
+        return salario;
+    }
+
+    public void setSalario(int salario) {
         this.salario = salario;
     }
 
-    
-    @Override
-    public void imprimir(){
-        System.out.println(numfax+salario+despacho);
+    public Despacho getDespacho() {
+        return despacho;
     }
+
+    public void setDespacho(Despacho despacho) {
+        this.despacho = despacho;
+    }
+
+    
+    public void imprimir() {
+        System.out.print("Secretario{" + "numfax=" + numfax + ", ano=" + ano + ", salario=" + salario + ", despacho=" + despacho + '}');
+    
+    }
+
+  
+    
+    
+
+    
+    
   
     @Override
     public void incrementarSalario(){

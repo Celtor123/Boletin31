@@ -9,7 +9,51 @@ public class Xefe extends Empregado{
     private Despacho despacho;
     private Secretario secretario;
     private Coche coche;
-  ArrayList <Secretario> a= new ArrayList<>();
+  ArrayList <Vendedor> a= new ArrayList<>();
+
+    public Xefe(Despacho despacho, Secretario secretario, Coche coche) {
+        this.despacho = despacho;
+        this.secretario = secretario;
+        this.coche = coche;
+    }
+
+    public Despacho getDespacho() {
+        return despacho;
+    }
+
+    public void setDespacho(Despacho despacho) {
+        this.despacho = despacho;
+    }
+
+    public Secretario getSecretario() {
+        return secretario;
+    }
+
+    public void setSecretario(Secretario secretario) {
+        this.secretario = secretario;
+    }
+
+    public Coche getCoche() {
+        return coche;
+    }
+
+    public void setCoche(Coche coche) {
+        this.coche = coche;
+    }
+
+    public ArrayList<Vendedor> getA() {
+        return a;
+    }
+
+    public void setA(ArrayList<Vendedor> a) {
+        this.a = a;
+    }
+    public void imprimir(){
+        System.out.println(" Despacho"+despacho+" Secretario"+secretario+" Coche"+coche+" Vendedor"+a.toString());
+    }
+    
+
+ 
 
 public void incrementarSalario(){
         ano=Integer.parseInt(JOptionPane.showInputDialog("Cantos anos leva este xefe traballando"));
