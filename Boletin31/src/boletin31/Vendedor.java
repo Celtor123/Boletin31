@@ -6,23 +6,26 @@ import javax.swing.JOptionPane;
 
 public class Vendedor extends Empregado{
     Coche coche;
-    int telefonoMobil;
-    float areaVenta;
-    ArrayList<Cliente> clientes= new ArrayList<>();
-    int porcentaxe,ano;
-   double salario;
+    int telefonoMobil,porcentaxe,ano;
+   
+    ArrayList<Cliente> cliente= new ArrayList<>();
+    
+   double salario,areaVenda;
    
     public Vendedor() {
     }
 
-    public Vendedor(Coche coche, int telefonoMobil, float areaVenta, int porcentaxe, int ano, double salario) {
+    public Vendedor(Coche coche, int telefonoMobil, int porcentaxe, int ano, double salario, double areaVenda,ArrayList <Cliente>cliente) {
         this.coche = coche;
         this.telefonoMobil = telefonoMobil;
-        this.areaVenta = areaVenta;
         this.porcentaxe = porcentaxe;
         this.ano = ano;
         this.salario = salario;
+        this.areaVenda = areaVenda;
+        this.cliente=cliente;
     }
+
+    
 
     public Coche getCoche() {
         return coche;
@@ -40,20 +43,20 @@ public class Vendedor extends Empregado{
         this.telefonoMobil = telefonoMobil;
     }
 
-    public float getAreaVenta() {
-        return areaVenta;
+    public double getAreaVenta() {
+        return areaVenda;
     }
 
     public void setAreaVenta(float areaVenta) {
-        this.areaVenta = areaVenta;
+        this.areaVenda = areaVenta;
     }
 
     public ArrayList<Cliente> darAltaCliente() {
-        return clientes;
+        return cliente;
     }
 
-    public void darBaixaaCliente(ArrayList<Cliente> clientes) {
-        this.clientes = clientes;
+    public void darBaixaaCliente(ArrayList<Cliente> cliente) {
+        this.cliente = cliente;
     }
 
     public int getPorcentaxe() {
@@ -86,14 +89,16 @@ public class Vendedor extends Empregado{
 
   
       public void imprimir(){
-       System.out.println("Vendedor{" + "coche=" + coche + ", telefonoMobil=" + telefonoMobil + ", areaVenta=" + areaVenta + ", clientes=" + clientes + ", porcentaxe=" + porcentaxe + '}');   
-        }
+       System.out.println("Vendedor{" + "coche=" + coche + ", telefonoMobil=" + telefonoMobil + ", porcentaxe=" + porcentaxe+", ano=" + ano+", salario=" + salario+", areaVenda=" + areaVenda + ", clientes=" + cliente + '}');   
+        }                                                                      //coche,movil,porcentaxe,ano,salario,areaVenda,cliente
       
 
     @Override
     public void incrementarSalario(){
         ano=Integer.parseInt(JOptionPane.showInputDialog("Cantos anos leva este vendedor traballando"));
-        this.salario=((salario*12)+(ano*5/100))/12;
+        this.salario=(((salario*12)+(ano*5/100))/12);
+        this.salario=salario-(salario*porcentaxe/100);
+        setSalario(salario);
     }
     }
 // Ten coche da empresa (identificado por matricúlaa, marca e modelo), teléfono móbil, área de venda, lista de clientes

@@ -64,8 +64,9 @@ public class Secretario extends Empregado{
   
     @Override
     public void incrementarSalario(){
-        ano=Integer.parseInt(JOptionPane.showInputDialog("Cantos anos leva este vendedor traballando"));
-        this.salario=((salario*12)+(ano*5/100))/12;
+        ano=Integer.parseInt(JOptionPane.showInputDialog("Cantos anos leva este secretario traballando"));
+        salario=((salario*12)+(ano*5/100))/12;
+        setSalario(salario);
     }
 //    Secretario. Ten despacho, número de fax e incrementa o seu salario un 5% anual.
 // Terá, polo menos, as seguintes funciones membro:

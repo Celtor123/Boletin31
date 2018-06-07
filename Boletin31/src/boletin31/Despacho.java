@@ -12,6 +12,11 @@ package boletin31;
 public class Despacho {
     String nome;
 
+    public Despacho(String nome) {
+        this.nome = nome;
+    }
+    
+
     public String getNome() {
         return nome;
     }
