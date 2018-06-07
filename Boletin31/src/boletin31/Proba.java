@@ -31,12 +31,15 @@ Coche y= new Coche("2345fhg","Ferrari","Custom/3CDI");
 julio.cambioCoche(y);
 julio.cambiarSupervisor(b);
 julio.imprimir();
+Cliente ayo= new Cliente("Yosh");
+julio.darAltaCliente(ayo);
 Coche i= new Coche("2735tjr","Chevrolet","Hardley/47dhb26");
 julio.cambioCoche(i);
 julio.cambiarSupervisor(a);
 julio.incrementarSalario();
 julio.imprimir();
-
+julio.darBaixaaCliente(ayo);
+julio.imprimir();
 
     }    
        

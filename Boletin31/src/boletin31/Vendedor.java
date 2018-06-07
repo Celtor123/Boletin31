@@ -7,22 +7,21 @@ import javax.swing.JOptionPane;
 public class Vendedor extends Empregado{
     Coche coche;
     int telefonoMobil,porcentaxe,ano;
-   
-    ArrayList<Cliente> cliente= new ArrayList<>();
-    
+   ArrayList<Cliente> clientearray= new ArrayList<>();
+Cliente cliente;
    double salario,areaVenda;
    
     public Vendedor() {
     }
 
-    public Vendedor(Coche coche, int telefonoMobil, int porcentaxe, int ano, double salario, double areaVenda,ArrayList <Cliente>cliente) {
+    public Vendedor(Coche coche, int telefonoMobil, int porcentaxe, int ano, double salario, double areaVenda, ArrayList<Cliente> cliente) {
         this.coche = coche;
         this.telefonoMobil = telefonoMobil;
         this.porcentaxe = porcentaxe;
         this.ano = ano;
         this.salario = salario;
         this.areaVenda = areaVenda;
-        this.cliente=cliente;
+        ArrayList<Cliente>clienterray=clientearray;
     }
 
     
@@ -51,12 +50,12 @@ public class Vendedor extends Empregado{
         this.areaVenda = areaVenta;
     }
 
-    public ArrayList<Cliente> darAltaCliente() {
-        return cliente;
+    public void darAltaCliente(Cliente cliente) {
+        clientearray.add(cliente);
     }
 
-    public void darBaixaaCliente(ArrayList<Cliente> cliente) {
-        this.cliente = cliente;
+    public void darBaixaaCliente(Cliente cliente) {
+        clientearray.remove(cliente);
     }
 
     public int getPorcentaxe() {
