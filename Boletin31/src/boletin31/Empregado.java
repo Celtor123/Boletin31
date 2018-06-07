@@ -4,14 +4,14 @@ package boletin31;
 import javax.swing.JOptionPane;
 
 public class Empregado {
-String nome, apelidos,direccion; 
-        int DNI, teléfono;
+String nome, apelidos,direccion,DNI; 
+        int teléfono;
         double salario;
  int ano;
     public Empregado() {
     }
 
-    public Empregado(String nome, String apelidos, String direccion, int DNI, int teléfono, double salario) {
+    public Empregado(String nome, String apelidos, String direccion, String DNI, int teléfono, double salario) {
         this.nome = nome;
         this.apelidos = apelidos;
         this.direccion = direccion;
@@ -20,7 +20,7 @@ String nome, apelidos,direccion;
         this.salario = salario;
     }
     public void imprimir(){
-        JOptionPane.showMessageDialog(null, "nome"+nome+"apelidos"+apelidos+"direccion"+direccion+"DNI"+DNI+"teléfono"+teléfono+"salario"+salario);
+        JOptionPane.showMessageDialog(null, "nome"+nome+" apelidos"+apelidos+" direccion"+direccion+" DNI"+DNI+" teléfono"+teléfono+" salario"+salario);
     }
 public void incrementarSalario(){
     
@@ -30,7 +30,8 @@ public class supervisor{
 }
  
     public static void main(String[] args) {
-        // TODO code application logic here
+     Empregado Emilio= new Empregado("Celso","Emilio_Ferreiro","Calle/Soubiñas,13","263792G",986326123,1200.03);
+     Emilio.imprimir();
     }
     
 }
